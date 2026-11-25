@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SimServ | Enter. Explore. Engineer.</title>
+<meta name="description" content="SimServ is a virtual radiology learning and simulation platform. Walk through a 3D radiology department in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<section id="intro" class="intro">
+  <div class="halo" aria-hidden="true"></div>
+  <button class="skip" id="skip">Skip intro</button>
+  <div class="intro-inner">
+    <p class="kicker">Welcome to</p>
+    <h1 class="logo">SimServ</h1>
+    <p class="lead">Enter. Explore. Engineer.<br>Choose a department to begin. Radiology is open. The rest unlock soon.</p>
+    <ul class="depts">
+      <li>
+        <button class="dept open" id="enter-radio">
+          <span class="dot"></span>
+          <strong>Radiology Department</strong>
+          <small>Open. Enter the simulation</small>
+        </button>
+      </li>
+      <li class="dept locked-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0110 0v2h1a1 1 0 011 1v9a1 1 0 01-1 1H6a1 1 0 01-1-1v-9a1 1 0 011-1h1zm2 0h6V8a3 3 0 00-6 0v2z"/></svg><strong>Intensive Care Unit</strong><small>Locked</small></li>
+      <li class="dept locked-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0110 0v2h1a1 1 0 011 1v9a1 1 0 01-1 1H6a1 1 0 01-1-1v-9a1 1 0 011-1h1zm2 0h6V8a3 3 0 00-6 0v2z"/></svg><strong>Operating Theatre</strong><small>Locked</small></li>
+      <li class="dept locked-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0110 0v2h1a1 1 0 011 1v9a1 1 0 01-1 1H6a1 1 0 01-1-1v-9a1 1 0 011-1h1zm2 0h6V8a3 3 0 00-6 0v2z"/></svg><strong>Radiation Oncology</strong><small>Locked</small></li>
+    </ul>
+    <p class="hint">Explore the Radiology Department first.</p>
+  </div>
+</section>
+
+<section id="stage" class="stage" aria-hidden="true">
+  <div class="stage-bar">
+    <span class="logo-sm">SimServ <em>Radiology Department</em></span>
+    <button class="exit" id="exit">Exit simulation</button>
+  </div>
+  <div class="frame" id="frame">
+    <div class="loading" id="loading"><div class="ring"></div><p>Loading simulation</p></div>
+    <iframe id="sim" title="SimServ simulation" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+  </div>
+</section>
+
+<main id="site" class="site">
+  <nav class="nav">
+    <a href="#top" class="logo-sm">SimServ</a>
+    <div><a href="#about">About</a><a href="#department">Department</a><a href="#specs">Specs</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a><button id="nav-play">Play</button></div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="halo" aria-hidden="true"></div>
+    <h2>You have stepped out of SimServ.</h2>
+    <p>The Radiology Department is waiting whenever you want to go back in.</p>
+    <div class="cta"><button class="btn gold" id="again">Play again</button><a class="btn ghost" href="#about">Learn about SimServ</a></div>
+  </header>
+
+  <section id="about" class="sec marble">
+    <div class="wrap split">
+      <div>
+        <h2>Walk through the department before you touch the machine.</h2>
+        <p>SimServ is a virtual radiology learning and simulation platform. Learners walk through a 3D radiology department, inspect imaging equipment and follow guided workflows, all in a browser on a standard lab computer.</p>
+        <p>It is built for education and training only. It does not support medical diagnosis or control of real equipment.</p>
+      </div>
+      <img class="shot" src="assets/overview.jpg" alt="3D overview of the SimServ radiology department" loading="lazy">
+    </div>
+    <div class="wrap pillars">
+      <div><h3>Immersive</h3><p>Interactive 3D machines and rooms.</p></div>
+      <div><h3>Accessible</h3><p>Learn anywhere and repeat safely.</p></div>
+      <div><h3>Industry-aligned</h3><p>For students, clinicians and engineers.</p></div>
+    </div>
+  </section>
+
+  <section id="problem" class="sec grey">
+    <div class="wrap">
+      <h2>Why SimServ exists</h2>
+      <p class="sub">Radiology equipment training is hard to access and hard to scale.</p>
+      <div class="cards">
+        <article><h3>Scarce access</h3><p>Imaging machines are costly and often in clinical use.</p></article>
+        <article><h3>Risk and cost</h3><p>Hands-on practice carries safety and equipment risk.</p></article>
+        <article><h3>Static learning</h3><p>Textbooks and slides rarely show how machines work.</p></article>
+        <article><h3>Siloed knowledge</h3><p>Department workflow is rarely taught end to end.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="department" class="sec deep">
+    <div class="wrap">
+      <h2>Inside the Radiology Department</h2>
+      <p class="sub">A 26 m by 16 m ward with MRI, CT and X-ray suites.</p>
+      <div class="split">
+        <img class="shot" src="assets/floorplan.jpg" alt="Floor plan of the radiology department" loading="lazy">
+        <ul class="rooms">
+          <li>Reception and waiting area</li><li>Changing rooms</li><li>Dark room</li><li>Reading room</li>
+          <li>Patient care unit</li><li>MRI room</li><li>CT scan room</li><li>X-ray room</li><li>X-ray fluoroscopy room</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <figure><img src="assets/mri.jpg" alt="MRI scanner and patient table" loading="lazy"><figcaption>MRI scanner: magnet, table and exam room</figcaption></figure>
+        <figure><img src="assets/beds.jpg" alt="Patient care unit beds" loading="lazy"><figcaption>Patient care unit</figcaption></figure>
+        <figure><img src="assets/corridor.jpg" alt="Department corridor" loading="lazy"><figcaption>Department corridor</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="sec marble">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Enter</strong><span>Walk into the department.</span></li>
+        <li><strong>Explore</strong><span>Inspect machines in 3D.</span></li>
+        <li><strong>Interact</strong><span>Use controls and workflows.</span></li>
+        <li><strong>Learn</strong><span>Read guided explanations.</span></li>
+        <li><strong>Assess</strong><span>Check understanding.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="specs" class="sec grey">
+    <div class="wrap">
+      <h2>Specs</h2>
+      <dl class="specs">
+        <div><dt>Stage</dt><dd>Prototype</dd></div>
+        <div><dt>Engine</dt><dd>Unity, in your browser (WebGL)</dd></div>
+        <div><dt>Hardware</dt><dd>Standard lab PC. No VR headset needed</dd></div>
+        <div><dt>Environment</dt><dd>26 m by 16 m radiology ward</dd></div>
+        <div><dt>Modalities</dt><dd>MRI, CT, X-ray and fluoroscopy</dd></div>
+        <div><dt>Standards</dt><dd>Mapped to Washington Accord and HEC outcomes</dd></div>
+        <div><dt>Equipment models</dt><dd>Built from CAD assemblies</dd></div>
+        <div><dt>Use</dt><dd>Education and training only</dd></div>
+      </dl>
+      <h3 class="who">Who it is for</h3>
+      <p class="chips"><span>Universities</span><span>Hospitals</span><span>Training centres</span><span>Healthcare professionals</span><span>Service engineers</span></p>
+    </div>
+  </section>
+
+  <section id="roadmap" class="sec marble">
+    <div class="wrap">
+      <h2>Roadmap</h2>
+      <ol class="road">
+        <li><strong>Now</strong><span>CT, MRI and digital X-ray</span></li>
+        <li><strong>Next</strong><span>Ultrasound module and assessments</span></li>
+        <li><strong>Later</strong><span>Nuclear medicine and VR headsets</span></li>
+        <li><strong>Vision</strong><span>AI-assisted learning and more modules</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="departments" class="sec deep">
+    <div class="wrap">
+      <h2>Departments</h2>
+      <ul class="depts compact">
+        <li class="dept open static"><span class="dot"></span><strong>Radiology Department</strong><small>Available now</small></li>
+        <li class="dept locked-card"><strong>Intensive Care Unit</strong><small>Coming soon</small></li>
+        <li class="dept locked-card"><strong>Operating Theatre</strong><small>Coming soon</small></li>
+        <li class="dept locked-card"><strong>Radiation Oncology</strong><small>Coming soon</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="team" class="sec marble">
+    <div class="wrap">
+      <h2>The team</h2>
+      <p class="sub">Faculty of Engineering, Science, Technology and Management, Ziauddin University, Karachi.</p>
+      <dl class="specs">
+        <div><dt>Supervisor</dt><dd>Engr. Taha Mushtaq Shaikh</dd></div>
+        <div><dt>Team lead</dt><dd>Izma Fatima Muhammad</dd></div>
+        <div><dt>Team members</dt><dd>Nadia Haider, Sabeeha Momin, Rubab Fatima, Urooj</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span class="logo-sm">SimServ</span>
+      <p>Enter. Explore. Engineer.</p>
+      <p>Ziauddin University, F-103, Block B, North Nazimabad Town, Karachi 74600, Pakistan</p>
+      <p><a href="mailto:taha.mushtaq@zu.edu.pk">taha.mushtaq@zu.edu.pk</a></p>
+      <p>© 2026 SimServ. For education and training only.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
